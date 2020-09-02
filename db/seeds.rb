@@ -21,7 +21,7 @@ Faker::UniqueGenerator.clear
     treenut_free: Faker::Boolean.boolean(true_ratio: 0.7),
     vegetarian: Faker::Boolean.boolean(true_ratio: 0.25),
     available: true,
-    catering: Faker::Boolean.boolean(true_ratio: 0.1),
+    catering: Faker::Boolean.boolean(true_ratio: 0.5),
     featured: Faker::Boolean.boolean(true_ratio: 0.25)
   )
   if product.vegetarian == true && product.dairy_free == true

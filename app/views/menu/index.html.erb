@@ -1,0 +1,18 @@
+<div class="menu-container">
+  <div class="row">
+    <% 3.times do %>
+      <% @products.each do |product| %>
+        <div class="col-4">
+          <div class="menu-item">
+            <h5><%= product.name %></h5>
+            <p><%= product.description %></p>
+            <span><%= product.price %> | <%= product.catering ? "Available for catering" : "" %></span>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <p class="background-thanks">
+    <span>Photo by <a href="https://unsplash.com/@foodiesfeed?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Jakub Kapusnak</a> on <a href="https://unsplash.com/s/photos/restaurant?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+  </p>
+</div>

@@ -15,4 +15,8 @@ class WelcomeController < ApplicationController
     @page = 'about'
   end
 
+  def reviews
+    @page = 'reviews'
+  end
+
 end

@@ -1,3 +1,88 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.page-container {
+  margin: 0px;
+  padding: 0px;
+  max-width: 100%;
+}
+
+.title-card {
+  -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
+  background-color: #333;
+}
+
+.title-text {
+  color: #FFF;
+  text-align: center;
+  font-size: 8em;
+  margin: 0px;
+}
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("/home.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  overflow: hidden;
+}
+
+.home {
+  background-image: url("/home.jpg");
+}
+
+.menu {
+  background-image: url("/menu.jpg");
+}
+
+.catering {
+  background-image: url("/catering.jpg");
+}
+
+.about {
+  background-image: url("/about.jpg");
+}
+
+.reviews {
+  background-image: url("/reviews.jpg");
+}
+
+.links {
+  margin-top: 1em;
+}
+
+.link-container {
+  padding-left: 1em;
+  padding-top: 0.25em;
+  .link {
+    color: #FFF;
+  }
+  .active {
+    color: rgba(255, 255, 255, 0.75);
+  }
+  .link:active {
+    color: rgba(255, 255, 255, 0.75);
+  }
+}
+
+.background-thanks {
+  color: rgba(255, 255, 255, 0.50);
+  background-color: none;
+  text-align: right;
+  position: fixed;
+  bottom: 0px;
+  right: 20px;
+  & span a {
+    color: rgba(255, 255, 255, 0.50);
+  }
+}
