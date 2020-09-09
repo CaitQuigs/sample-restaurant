@@ -14,14 +14,18 @@
   <body>
     <% cache do %>
       <div class="<%= @page %> page">
-        <div class="row page-container">
-          <%= render 'layouts/links' %>
+        <div class="row">
+          <div class="col-2">
+            <%= render 'layouts/links' %>
+          </div>
           <div class="col-8">
-            <%= render 'shared/alerts' %>
-            <% unless @page == "home" %>
-              <%= render 'layouts/title' %>
-            <% end %>
-            <%= yield %>
+            <div class="main-content">
+              <%= render 'shared/alerts' %>
+              <% unless @page == "home" %>
+                <%= render 'layouts/title' %>
+              <% end %>
+              <%= yield %>
+            </div>
           </div>
           <div class="col-2"></div>
         </div>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'search', to: 'menu#search'
+  resources :categories
   devise_for :users
   root 'welcome#home'
 

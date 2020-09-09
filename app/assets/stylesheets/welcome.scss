@@ -6,36 +6,18 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.page-container {
-  margin: 0px;
-  padding: 0px;
-  max-width: 100%;
-}
-
-.title-card {
-  -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
-  box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
-  background-color: #333;
-}
-
-.title-text {
-  color: #FFF;
-  text-align: center;
-  font-size: 7.5em;
-  padding: 0.5em;
-  margin: 0px;
-}
-
 .page {
   width: 100vw;
   height: 100vh;
-  background-image: url("/home.jpg");
-  background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-position: center center;
-  overflow: hidden;
+  background-attachment: fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  position: fixed;
+  z-index: 1;
 }
 
 .home {
@@ -58,8 +40,11 @@
   background-image: url("/reviews.jpg");
 }
 
-.links {
+.navigation {
+  height: 100vh;
   margin-top: 1em;
+  position: fixed;
+  z-index: 3;
 }
 
 .link-container {
@@ -76,6 +61,28 @@
   }
 }
 
+.title-card {
+  -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
+  background-color: #333;
+}
+
+.title-text {
+  color: #FFF;
+  text-align: center;
+  font-size: 7.5em;
+  padding: 0.5em;
+  margin: 0px;
+}
+
+.main-content {
+  height: 100vh;  
+  overflow: auto;
+  position: relative;
+  z-index: 3;
+}
+
 .background-thanks {
   color: rgba(255, 255, 255, 0.50);
   background-color: none;
@@ -83,6 +90,7 @@
   position: fixed;
   bottom: 0px;
   right: 20px;
+  z-index: 2;
   & span a {
     color: rgba(255, 255, 255, 0.50);
   }

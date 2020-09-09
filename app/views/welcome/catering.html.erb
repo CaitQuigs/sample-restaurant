@@ -1,3 +1,30 @@
-<div class="col-8">
-<p class="background-thanks"><span>Photo by <a href="https://unsplash.com/@saileyas?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Asiya Kiev</a> on <a href="https://unsplash.com/s/photos/restaurant-catering?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></p>
+<div class="menu-container">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="text-center my-2">Catering Menu</h1>
+      <p class="text-center my-2">Please call the restaurant to place a catering order</p>
+
+      <div class="container">
+        <div class="row">
+          <% @cats.each do |cat| %>
+            <div class="col-12">
+              <h3 class="text-center my-3"><%= cat.heading %></h3>
+              <hr  />
+            </div>
+            <% @products.each do |product| %>
+              <% if product.category == cat %>
+                <div class="col-4 my-2">
+                  <h5><%= product.name %></h5>
+                  <p><%= product.description %></p>
+                  <span><%= product.price %> <%= "| Available for catering" if product.catering %></span>
+                </div>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+<p class="background-thanks"><span>Photo by <a href="https://unsplash.com/@saileyas?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Asiya Kiev</a> on <a href="https://unsplash.com/s/photos/restaurant-catering?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></p>

@@ -1,18 +1,37 @@
 <div class="menu-container">
   <div class="row">
-    <% 3.times do %>
-      <% @products.each do |product| %>
-        <div class="col-4">
-          <div class="menu-item">
-            <h5><%= product.name %></h5>
-            <p><%= product.description %></p>
-            <span>$ <%= product.price %> <%= product.catering ? "| Available for catering" : "" %></span>
+    <div class="col-12">
+      <%= form_tag(search_path, method: "get", remote: true) do %>
+        <div class="input-group mb-5">
+          <div class="col-8">
+            <%= text_field_tag :search, '', class: "form-control", placeholder: 'Search...', onkeydown: 'clickSubmit();' %>
+          </div>
+          <div class="col-4">
+            <%= select_tag "filter", options_for_select(['Select Filter', 
+              'Dairy Free', 
+              'Gluten Free', 
+              'Kosher', 
+              'Peanut Free', 
+              'Treenut Free', 
+              'Vegan', 
+              'Vegetarian']), class: 'custom-select search-form', onchange: 'clickSubmit();' %>
+            <%= submit_tag "Search", class: 'btn btn-dark', id: 'search-submit', style:'display:none' %>
           </div>
         </div>
       <% end %>
-    <% end %>
+    </div>
+  </div>
+
+  <div id="menu-products-container">
+    <%= render 'menu/menu_product' %>
   </div>
   <p class="background-thanks">
     <span>Photo by <a href="https://unsplash.com/@foodiesfeed?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Jakub Kapusnak</a> on <a href="https://unsplash.com/s/photos/restaurant?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
   </p>
 </div>
+
+<script>
+  function clickSubmit() {
+    $("#search_submit").trigger("click");
+  }
+</script>

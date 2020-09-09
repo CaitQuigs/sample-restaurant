@@ -3,12 +3,10 @@ class WelcomeController < ApplicationController
     @page = 'home'
   end
 
-  def menu
-    @page = 'menu'
-  end
-
   def catering
     @page = 'catering'
+    @cats = Category.all.where(display: true)
+    @products = Product.where(catering: true)
   end
   
   def about

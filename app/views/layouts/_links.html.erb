@@ -1,19 +1,17 @@
-<div class="col-2">
-  <div class="links">
-    <h5 class="link-container">
-      <%= link_to "Home", root_path, class: "link #{@page == 'home' ? 'active' : ''}" %>
-    </h5>
-    <h5 class="link-container">
-      <%= link_to "Menu", menu_path, class: "link #{@page == 'menu' ? 'active' : ''}" %>
-    </h5>
-    <h5 class="link-container">
-      <%= link_to "About", about_path, class: "link #{@page == 'about' ? 'active' : ''}" %>
-    </h5>
-    <h5 class="link-container">
-      <%= link_to "Catering", catering_path, class: "link #{@page == 'catering' ? 'active' : ''}" %>
-    </h5>
-    <h5 class="link-container">
-      <%= link_to "Reviews", reviews_path, class: "link #{@page == 'catering' ? 'active' : ''}" %>
-    </h5>
-  </div>
+<div class="navigation">
+  <h5 class="link-container">
+    <%= link_to "Home", root_path, class: "link #{@page == 'home' ? 'active' : ''}" %>
+  </h5>
+  <h5 class="link-container">
+    <%= link_to "Menu", menu_path, class: "link #{@page == 'menu' ? 'active' : ''}" %>
+  </h5>
+  <h5 class="link-container">
+    <%= link_to "About", about_path, class: "link #{@page == 'about' ? 'active' : ''}" %>
+  </h5>
+  <h5 class="link-container">
+    <%= link_to "Catering", catering_path, class: "link #{@page == 'catering' ? 'active' : ''}" %>
+  </h5>
+  <h5 class="link-container">
+    <%= link_to "Reviews", reviews_path, class: "link #{@page == 'catering' ? 'active' : ''}" %>
+  </h5>
 </div>
