@@ -4,12 +4,14 @@ class MenuController < ApplicationController
   def index
     @page = 'menu'
     @products = Product.all
+    @order_item = current_order.order_items.new
   end
 
   def search
     query = params[:search]
 
     results = Product.where('name LIKE ?', "%#{query}%")
+    
     if params[:filter]  == 'Select Filter'
       @products = results
     else
