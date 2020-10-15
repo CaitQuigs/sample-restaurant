@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :check_categories, only: [:new, :create, :edit]
 
   # GET /products
   # GET /products.json
@@ -64,16 +65,21 @@ class ProductsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_product
-      @product = Product.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def product_params
-      params.require(:product).permit(:name, :description, :price, :image, :category_id, 
-                                      :dairy_free, :gluten_free, :kosher, :peanut_free, 
-                                      :treenut_free, :vegan, :vegetarian, :available, :catering, 
-                                      :featured)
-    end
+  def check_categories
+    redirect_to new_category_path if Category.count == 0
+  end
+  
+  # Use callbacks to share common setup or constraints between actions.
+  def set_product
+    @product = Product.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def product_params
+    params.require(:product).permit(:name, :description, :price, :image, :category_id, 
+                                    :dairy_free, :gluten_free, :kosher, :peanut_free, 
+                                    :treenut_free, :vegan, :vegetarian, :available, :catering, 
+                                    :featured)
+  end
 end

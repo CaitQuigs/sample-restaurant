@@ -81,6 +81,12 @@
   overflow: auto;
   position: relative;
   z-index: 3;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.main-content::-webkit-scrollbar {
+  display: none;
 }
 
 .background-thanks {
