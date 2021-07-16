@@ -1,10 +1,10 @@
-# sample-restaurant ReadMe
-<a href="#installation">Installation</a>
-<a href="#features">Features</a>
-<a href="#acknowledgments">Acknowledgments</a>
+# sample-restaurant README
+<a href="#installation">Installation</a> - 
+<a href="#features">Features</a> - 
+<a href="#acknowledgments">Acknowledgments</a> - 
 <a href="#license">License</a>
 
-Sample-restaurant is a web application for local restaurants to inform customers and process online orders for take out and delivery. This application is built with Ruby on Rails and comes configured to deploy through Heroku.
+Sample-restaurant is a web application for a local restaurant to inform customers about itself and process online orders for take out and delivery. This application is built with Ruby on Rails and comes configured to deploy through Heroku.
 
 ## Installation
 
@@ -50,8 +50,10 @@ pg_database_username: <your postgresql username>
 pg_database_password: <your postgresql password>
 pg_database_port: <your postgresql port number>
 aws:
-    secret_key: <your aws secret key>
-    bucket_name: <your aws bucket name>
+    access_key_id: <your aws access key id>
+    secret_access_key: <your aws secret key>
+    region: <region of your aws bucket>
+    bucket: <your aws bucket name>
 ```
 Make sure to save your file as you exit it. Now all the services on this application should work! Run your application on your local server to check it out!
 
@@ -81,6 +83,7 @@ Check the installation by running the server with `rails s`. Once all data - men
 * Includes an administration section to add, remove and change menu items.
 * Able to feature menu items.
 * Validates and authenticates orders.
+* Supports direct upload of images to AWS S3.
 
 ## Acknowledgments
 
